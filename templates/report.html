@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}View Report{% endblock %}
+
+{% block content %}
+<div style="padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h2 style="color: #333; margin-bottom: 20px;">Expense Report</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr style="background-color: #f2f2f2;">
+            <th style="padding: 12px; border: 1px solid #ddd;">Amount</th>
+            <th style="padding: 12px; border: 1px solid #ddd;">Category</th>
+            <th style="padding: 12px; border: 1px solid #ddd;">Description</th>
+        </tr>
+        {% for expense in expenses %}
+        <tr>
+            <td style="padding: 12px; border: 1px solid #ddd;">{{ expense.amount }}</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">{{ expense.category }}</td>
+            <td style="padding: 12px; border: 1px solid #ddd;">{{ expense.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Expense{% endblock %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h2 style="color: #333; margin-bottom: 20px;">Add Expense</h2>
+    <form action="{{ url_for('add_expense') }}" method="POST">
+        <div style="margin-bottom: 15px;">
+            <label for="amount" style="font-weight: bold; display: block; margin-bottom: 8px; color: #333;">Amount:</label>
+            <input type="number" id="amount" name="amount" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="category" style="font-weight: bold; display: block; margin-bottom: 8px; color: #333;">Category:</label>
+            <input type="text" id="category" name="category" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="description" style="font-weight: bold; display: block; margin-bottom: 8px; color: #333;">Description:</label>
+            <textarea id="description" name="description" rows="4" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px;"></textarea>
+        </div>
+        <button type="submit" style="width: 100%; background-color: #4CAF50; color: white; cursor: pointer; transition: background-color 0.3s ease; padding: 12px; border: none; border-radius: 4px;">Add Expense</button>
+    </form>
+</div>
+{% endblock %}
